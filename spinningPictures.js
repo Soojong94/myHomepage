@@ -4,7 +4,11 @@ var container = document.querySelector('.container')
         var x = e.offsetX
         var y = e.offsetY
         var rotateY = -1 / 5 * x + 20
-        var rotateX = 4 / 30 * y - 20
+        var rotateX = 4 / 15 * y - 30
+
+        
+  rotateY = (rotateY / 250) * 90; // 
+  rotateX = (rotateX / 250) * 90; // 
         
         console.log('mousemove', x,y)
 
