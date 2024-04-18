@@ -5,8 +5,8 @@ function applyRotation(container, overlay) {
     var rotateY = -1 / 5 * x + 20;
     var rotateX = 4 / 15 * y - 30;
 
-    rotateY = ((rotateY / 250) * 90 ) % 360;
-    rotateX = ((rotateX / 250) * 90 ) % 360;
+    rotateY = ((rotateY / 250) * 90 + 360 ) % 360;
+    rotateX = ((rotateX / 250) * 90 + 360) % 360;
 
     overlay.style = `background-position : ${x / 5 + y / 5}%; filter : opacity(${x / 200}) brightness(1.2)`;
     container.style = `transform : perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
