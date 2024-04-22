@@ -98,8 +98,6 @@ a {
   border: 2px solid lightblue;
 }
 .image5:hover{
-  transform: rotate(-10deg);
-  transition: transform 0.5s ease-in-out;
   border: 2px solid lightblue;
 }
 .image6:hover{
@@ -123,6 +121,11 @@ footer{
   margin-top: 5%;
   text-align: center;
   color: antiquewhite;
+}
+
+header{
+  color: white;
+  text-align: center;
 }
 
 
