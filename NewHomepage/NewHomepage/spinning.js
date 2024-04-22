@@ -1,26 +1,29 @@
-function applyRotation(image, overlay) {
+function applyRotation(image) {
   image.addEventListener('mousemove', function (e) {
     var x = e.offsetX;
     var y = e.offsetY;
+    
+    var speed = 0.3; 
+    
     var rotateY = -1 / 5 * x + 20;
     var rotateX = 4 / 15 * y - 30;
 
-    rotateY = ((rotateY / 250) * 90 + 360 ) % 360;
+    rotateY = ((rotateY / 250) * 90 + 360) % 360;
     rotateX = ((rotateX / 250) * 90 + 360) % 360;
 
-    overlay.style = `background-position : ${x / 5 + y / 5}%; filter : opacity(${x / 200}) brightness(1.2)`;
-    image.style = `transform : perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    // 각도를 높이기 위해 추가한 변수
+    var angleMultiplier = 1; 
+
+    rotateY = (rotateY + x * speed * angleMultiplier) % 360;
+    rotateX = (rotateX + y * speed * angleMultiplier) % 360; 
+
+    image.style.transform = `perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
   image.addEventListener('mouseout', function () {
-    overlay.style = 'filter : opacity(0)';
-    image.style = 'transform : perspective(350px) rotateY(0deg) rotateX(0deg)';
+    image.style.transform = 'perspective(350px) rotateY(0deg) rotateX(0deg)';
   });
 }
 
-// 각각의 카드에 함수를 적용
-var images = document.querySelectorAll('.image');
-images.forEach(function (image) {
-  var overlay = image.querySelector('.overlay');
-  applyRotation(image, overlay);
-});
+var image5 = document.querySelector('.image5');
+applyRotation(image5); 
