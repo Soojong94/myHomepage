@@ -27,3 +27,6 @@ function applyRotation(image) {
 
 var image5 = document.querySelector('.image5');
 applyRotation(image5); 
+
+var image7 = document.querySelector('.image7');
+applyRotation(image7); 
