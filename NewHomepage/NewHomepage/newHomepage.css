@@ -157,3 +157,11 @@ header {
   text-align: center;
   margin: auto;
 }
+
+.image5_text {
+  grid-area: h;
+  position: static;
+  color: orangered;
+  text-align: center;
+  margin: auto;
+}
