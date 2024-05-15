@@ -3,7 +3,7 @@ function applyRotation(image) {
     var x = e.offsetX;
     var y = e.offsetY;
 
-    var speed = 0.3;
+    var speed = 0.01;
 
     var rotateY = -1 / 5 * x + 20;
     var rotateX = 4 / 15 * y - 30;
@@ -25,8 +25,8 @@ function applyRotation(image) {
   });
 }
 
-var image5 = document.querySelector('.image5');
-applyRotation(image5);
+// var image5 = document.querySelector('.image5');
+// applyRotation(image5);
 
 var image7 = document.querySelector('.image7');
 applyRotation(image7); 
